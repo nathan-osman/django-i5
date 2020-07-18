@@ -53,6 +53,20 @@ USE_TZ = True
 TIME_ZONE = 'UTC'
 
 
+##################
+# Installed apps #
+##################
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+]
+
+
 #####################
 # Database settings #
 #####################
@@ -143,6 +157,21 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media') if DEBUG else '/srv/media/'
 MEDIA_URL = '/media/'
 
 
+#################
+# Misc settings #
+#################
+
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+
 # Build the list of symbols exported by this module
 __all__ = (
     'DEBUG',
@@ -151,6 +180,8 @@ __all__ = (
     'USE_X_FORWARDED_HOST',
     'USE_TZ',
     'TIME_ZONE',
+
+    'INSTALLED_APPS',
 
     'DATABASES',
 
@@ -168,4 +199,6 @@ __all__ = (
 
     'MEDIA_ROOT',
     'MEDIA_URL',
+
+    'MIDDLEWARE',
 )
